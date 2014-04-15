@@ -1,5 +1,19 @@
 body {
   font-family: 'Overlock', cursive;
+  background-image:url('Bird-Wallpaper.jpg');
+  background-size: 100%;
+}
+
+a {
+  color: lightskyblue;
+}
+
+.container {
+  margin-top: 20px;
+  background-color: blanchedalmond;
+  padding: 10px;
+  border-radius: 5px;
+  opacity: 0.8;
 }
 
 .logo a {
@@ -16,4 +30,8 @@ body {
 
 .logo a:hover {
   text-decoration: none;
+}
+
+.chirp-title {
+  color: dodgerblue;
 }

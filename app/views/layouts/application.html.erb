@@ -14,7 +14,7 @@
     <span class="logo"><%= link_to "BirdSounds", root_path %></span>
     <br/>
     <% if user_signed_in? %>
-      Logged in as <strong><%= current_user.name %></strong>.
+      Logged in as <%= link_to "#{current_user.name}", user_path(current_user) %> |
       <%= link_to 'Edit profile', edit_user_registration_path %> |
       <%= link_to "Logout", destroy_user_session_path, method: :delete %>
     <% else %>
