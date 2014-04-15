@@ -6,10 +6,18 @@ class ChirpsController < ApplicationController
   end
 
   def create
-    @chirp = Chirp.create!(chirp_params)
-    respond_to do |format|
-      format.html { redirect_to user_path(@chirp.user) }
-      format.js
+    @chirp = Chirp.new(chirp_params)
+    @user = current_user
+    if @chirp.save
+      @chirp.find_handles.each do |recipient|
+
+      end
+      respond_to do |format|
+        format.html { redirect_to user_path(@chirp.user) }
+        format.js
+      end
+    else
+      render ('users/show.html.erb')
     end
   end
 
