@@ -5,10 +5,28 @@
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
+  <link href='http://fonts.googleapis.com/css?family=Miss+Fajardose' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Overlock' rel='stylesheet' type='text/css'>
 </head>
 <body>
-
-<%= yield %>
-
+<div class="container">
+  <div class="navbar navbar-inverse">
+    <span class="logo"><%= link_to "BirdSounds", root_path %></span>
+    <br/>
+    <% if user_signed_in? %>
+      Logged in as <strong><%= current_user.name %></strong>.
+      <%= link_to 'Edit profile', edit_user_registration_path %> |
+      <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+    <% else %>
+      <%= link_to "Sign up", new_user_registration_path %> |
+      <%= link_to "Login", new_user_session_path %>
+    <% end %>
+    <%= yield(:navigation) %>
+  </div>
+  <div class="header">
+    <%= yield(:header) %>
+  </div>
+  <%= yield %>
+</div>
 </body>
 </html>

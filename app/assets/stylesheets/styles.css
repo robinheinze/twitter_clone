@@ -1,0 +1,19 @@
+body {
+  font-family: 'Overlock', cursive;
+}
+
+.logo a {
+  font-size: 60px;
+  color: lightgrey;
+  font-family: 'Miss Fajardose', cursive;
+}
+
+.navbar {
+  padding: 10px;
+  font-size:20px;
+  color: aliceblue;
+}
+
+.logo a:hover {
+  text-decoration: none;
+}
