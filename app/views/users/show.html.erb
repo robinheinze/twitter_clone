@@ -1,0 +1,12 @@
+<%= content_for(:header) do %>
+  <h1><%= @user.name %></h1>
+  <h3>@<%= @user.handle %></h3>
+<% end %>
+
+<ul>
+  <div class="user-chirps">
+    <%= render(@user.chirps) %>
+  </div>
+</ul>
+
+<%= link_to "Chirp!", new_user_chirp_path(@user), :class => "btn btn-primary", id: "chirp_link", remote: true %>

@@ -1,0 +1,16 @@
+<div class="form">
+  <%= form_for [@user, @chirp], remote: true do |f| %>
+    <div class="form-group">
+      <%= f.label :title %>
+      <%= f.text_field :title, :autofocus => true, :class => "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :chirp %>
+      <%= f.text_area :content, :class => "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.hidden_field :user_id, :value => "#{current_user.id}" %>
+      <%= f.submit "Chirp!", :class => "btn btn-primary" %>
+    </div>
+  <% end %>
+</div>
