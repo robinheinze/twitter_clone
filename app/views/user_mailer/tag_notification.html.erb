@@ -1,0 +1,9 @@
+<p>Hello <%= @tagged_user.name %>, </p>
+
+<p><%= @chirp.user.name %> tagged you in the following chirp: </p>
+
+<p><%= @chirp.title %></p>
+
+<p><%= @chirp.content %></p>
+
+<p><%= link_to "Click here", user_path(@chirp.user) %> to see <%= @chirp.user.name %>'s profile</p>

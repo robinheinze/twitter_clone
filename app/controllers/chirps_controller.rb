@@ -9,14 +9,13 @@ class ChirpsController < ApplicationController
     @chirp = Chirp.new(chirp_params)
     @user = current_user
     if @chirp.save
-      @chirp.find_handles.each do |recipient|
-
-      end
+      @chirp.find_handles.each { |user| @chirp.send_emails_to_tagged_users(user)}
       respond_to do |format|
         format.html { redirect_to user_path(@chirp.user) }
         format.js
       end
     else
+      flash[:alert] = "Caution! Your chirp has not saved!"
       render ('users/show.html.erb')
     end
   end
