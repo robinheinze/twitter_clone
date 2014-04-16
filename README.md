@@ -6,7 +6,11 @@ For today's project, let's make a clone of Twitter.
 
 [+] Then, let users post tweets. If another user's handle is mentioned in the tweet, send that user a notification email.
 
-Now, let users follow each other. Of course, notify somebody by email if when they are followed. Add pages showing who a user follows, and who follows them.
+[+] Now, let users follow each other.
+
+Add pages showing who a user follows, and who follows them.
+
+Notify somebody by email if when they are followed.
 
 Let users upload photos in their tweets.
 

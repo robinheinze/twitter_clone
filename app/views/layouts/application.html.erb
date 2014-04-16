@@ -24,6 +24,7 @@
     <%= yield(:navigation) %>
   </div>
   <div class="header">
+    <%= flash[:notice] %>
     <%= yield(:header) %>
   </div>
   <%= yield %>
