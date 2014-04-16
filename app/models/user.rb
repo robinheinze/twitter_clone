@@ -14,4 +14,14 @@ class User < ActiveRecord::Base
     UserMailer.signup_confirm(self).deliver
   end
 
+  def following
+    follows = Follow.where(:follower_id => self.id)
+    following = follows.map { |f| User.find(f.followed_id) }
+  end
+
+  def followers
+    follows = Follow.where(:followed_id => self.id)
+    followers = follows.map { |f| User.find(f.follower_id) }
+  end
+
 end
